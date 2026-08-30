@@ -42,11 +42,35 @@
       letter-spacing: .08em;
       text-shadow: 0 .15rem .5rem rgba(40, 12, 75, .25);
     }
+
+    #titleToggle {
+      padding: 0;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      letter-spacing: inherit;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    #titleToggle:focus-visible {
+      outline: .2rem solid rgba(255, 255, 255, .9);
+      outline-offset: .35rem;
+      border-radius: .35rem;
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>陈炫雷大帅哥</h1>
+    <h1><button id="titleToggle" type="button" aria-live="polite">陈炫雷大帅哥</button></h1>
   </main>
+  <script>
+    const titleToggle = document.querySelector('#titleToggle');
+    titleToggle.addEventListener('click', () => {
+      titleToggle.textContent = titleToggle.textContent === '陈炫雷大帅哥'
+        ? '陈炫雷大猪逼'
+        : '陈炫雷大帅哥';
+    });
+  </script>
 </body>
 </html>
